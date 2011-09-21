@@ -18,7 +18,7 @@ public class RRFLoadTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		fail("Not yet implemented or is it?");
 	}
 
 }
