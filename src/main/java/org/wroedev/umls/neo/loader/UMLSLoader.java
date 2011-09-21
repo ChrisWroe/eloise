@@ -3,6 +3,8 @@ package org.wroedev.umls.neo.loader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
@@ -45,6 +47,20 @@ LineIterator iterator = IOUtils.lineIterator(new FileInputStream(mrcolsFilePath)
 		     
 		   }
 		return colType;
+	}
+	
+	public String[][] getPropertyTypesForFile(String fileName,String mrColsPath,String mrFilesPath) throws FileNotFoundException, IOException {
+		
+		String[] cols = getColumnNamesForFile(fileName, mrFilesPath);
+		String[] colTypes = new String[cols.length];
+		for (int i = 0; i < cols.length; i++) {
+			colTypes[i]=getColumnTypeForFile(cols[i], fileName, mrColsPath);
+		}
+		
+		String[][] result = {cols,colTypes};
+		
+		return result;
+		
 	}
 
 }

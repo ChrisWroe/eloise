@@ -50,5 +50,12 @@ public class UMLSLoaderTest {
 		String colType = loader.getColumnTypeForFile("CUI",mrconso, mrcolsFilePath);
 		assertEquals("char(8)",colType);
 	}
+	
+	@Test
+	public void testGetColumnInfo() throws Exception {
+		String[][] colTypes = loader.getPropertyTypesForFile(mrconso, mrcolsFilePath, mrfilesFilePath);
+		assertEquals("CUI",colTypes[0][0]);
+		assertEquals("char(8)",colTypes[1][0]);
+	}
 
 }
