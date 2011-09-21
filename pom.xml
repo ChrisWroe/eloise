@@ -4,4 +4,11 @@
   <artifactId>umls-neo-load</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>UMLS Neo Loader</name>
+  <dependencies>
+  <dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>1.4</version>
+	</dependency>
+	</dependencies>
 </project>
